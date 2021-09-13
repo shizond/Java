@@ -1,0 +1,58 @@
+package com.company;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+            Scanner in=new Scanner(System.in);
+        int row=in.nextInt();
+        int column=in.nextInt();
+        int [][]arr=new int[row][column];
+            Arr(arr);
+            Out(arr);
+            System.out.println("");
+            Processing(arr);
+    }
+    private static void Arr( int mass [][])
+    {
+        Random rnd = new Random();
+                for (int i=0; i<mass.length; i++)
+                {
+                for (int j=0;j<mass.length;j++)
+                {
+                mass[i][j]=rnd.nextInt(10)+1;
+                }
+            }
+            System.out.println();
+    }
+    private static void Out( int array [][])
+                {
+                for (int i=0; i<array.length; i++)
+                {
+                for (int j=0;j<array.length;j++)
+                {
+                System.out.print(array[i][j]+" ");
+                }
+                System.out.println("");
+        }
+    }
+    private static void Processing(int array [][])
+    {
+        for (int i=0; i<array.length; i++)
+        {
+            for (int j=0;j<array.length;j++)
+            {
+                if(i==j)
+                {
+                    if(array[i][j]%2==0)
+                    {
+                        System.out.println(array[i][j]);
+                    }
+                }
+            }
+        }
+    }
+};
